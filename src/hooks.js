@@ -8,9 +8,10 @@ export const useAnimatedScale = (scGap, delay) => {
         scale,
         start() {
             if (!animated) {
+                console.log("coming here")
                 var currScale = scale
                 setAnimated(true)
-                const interval = setInterval(delay, () => {
+                const interval = setInterval(() => {
                     currScale += scGap
                     setScale(currScale)
                     if (Math.abs(currScale) > 1) {
@@ -18,7 +19,7 @@ export const useAnimatedScale = (scGap, delay) => {
                         setAnimated(false)
                         clearInterval(interval)
                     }
-                })
+                }, delay)
             }
         }
     }
@@ -38,6 +39,7 @@ export const useDimension = () => {
             }
         }
     })
+    return {w, h}
 }
 
 export const useStyle = (scale, w, h) => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import {useAnimatedScale, useDimension} from 'react'
+import {useAnimatedScale, useDimension} from './hooks'
 import BiBarSeparatorPresentational from './BiBarSeparatorPresentational'
 
 const BiBarSeparatorComponent = (props) => {
